@@ -26,5 +26,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 $this->load->view('crud/login');
             }
         }
+        function logout(){
+            $this->session->sess_destroy();
+            redirect(base_url('login'));
+        }
     }
 ?>
