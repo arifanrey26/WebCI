@@ -9,6 +9,7 @@
         }
         public function index(){
             $data['user'] = $this->Admin_model->getAll()->result();
+            $data['level'] = $this->Admin_model->getLevel()->result();
             $this->template->tampil('crud/elesson/Dashboard/home_admin_elesson',$data);
         }
 
@@ -16,7 +17,9 @@
 
         //============================== tambah data user ===========================//
         public function tambah_data_user(){
-            $data['tambah'] = $this->Admin_model->getAll()->result();
+            // $data['tambah'] = $this->Admin_model->getAll()->result();
+            $data['level'] = $this->Admin_model->get_level();
+            $data['blokir'] = $this->Admin_model->getBlokir()->result();
             $this->template->tampil('crud/elesson/Dashboard/tambah/tambah_user',$data);
         }
         public function proses_tambah_data_user(){

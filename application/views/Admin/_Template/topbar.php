@@ -1,6 +1,6 @@
 <?php
   $getUser = $this->session->userdata('session_user');
-  $getGrup = $this->session->userdata('session_grup');
+  $getLevel = $this->session->userdata('session_level');
 ?>
 <!-- Topbar -->
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">

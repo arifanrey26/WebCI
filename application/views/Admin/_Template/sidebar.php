@@ -1,6 +1,6 @@
 <?php
   $getUser = $this->session->userdata('session_user');
-  $getGrup = $this->session->userdata('session_grup');
+  $getLevel = $this->session->userdata('session_level');
 ?>
 <!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -35,7 +35,7 @@
 
 	<!-- Nav Item - Pages Collapse Menu -->
 	<?php 
-		if($getGrup==1){
+		if($getLevel==1){
 			echo '<li class="nav-item">
 			<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
 				aria-controls="collapseTwo">
@@ -94,7 +94,7 @@
 				<h6 class="collapse-header">Other Pages:</h6>
 				<a class="collapse-item" href="404.html">404 Page</a>
 				<a class="collapse-item" href="/ci_projects">Home</a>
-				<?php echo '<a class="collapse-item active" href="'.base_url('Mahasiswa/logout').'">Logout</a>';?>
+				<?php echo '<a class="collapse-item active" href="'.base_url('Dashboard_elesson/logout').'">Logout</a>';?>
 			</div>
 		</div>
 	</li>

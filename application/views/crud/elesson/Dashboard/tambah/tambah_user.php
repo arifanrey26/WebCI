@@ -23,19 +23,19 @@
              <input type="email" class="form-control form-control-user" id="email" name="email" placeholder="E-Mail" require>
         </div>
         <div class="form-group">
-            <select id="grup" class="form-control" name="level" require>
+            <select id="level" class="form-control" name="level" require>
                 <?php
-                    foreach ($tambah as $value) {
-                     echo "<option value='$value->level'>$value->level</option>";
+                    foreach ($level as $value) {
+                     echo "<option value='$value->id_level'>$value->level</option>";
                     }
                 ?>
             </select>
         </div>
         <div class="form-group">
-            <select id="grup" class="form-control" name="blokir" require>
+            <select id="blokir" class="form-control" name="blokir" require>
                 <?php
-                    foreach ($tambah as $value) {
-                     echo "<option value='$value->blokir'>$value->blokir</option>";
+                    foreach ($blokir as $value) {
+                     echo "<option value='$value->id_blokir'>$value->blokir</option>";
                     }
                 ?>
             </select>

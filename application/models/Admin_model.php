@@ -3,6 +3,24 @@
         function getAll(){
             $this->db->select('*');
             $this->db->from('admin');
+            $this->db->join('tb_level','admin.level = tb_level.id_level');
+            $this->db->join('blokir','admin.blokir = blokir.id_blokir');
+            $query = $this->db->get();
+            return $query;
+        }
+        function getLevel(){
+            $this->db->select('*');
+            $this->db->from('tb_level');
+            $query = $this->db->get();
+            return $query;
+        }
+        function get_level(){
+            $this->db->order_by('id_level','ASC');
+            return $this->db->from('tb_level')->get()->result();
+        }
+        function getBlokir(){
+            $this->db->select('*');
+            $this->db->from('blokir');
             $query = $this->db->get();
             return $query;
         }

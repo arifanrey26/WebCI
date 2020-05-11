@@ -17,10 +17,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             if ($cek != FALSE){
                 foreach ($cek as $row){
                     $user = $row->username;
-                    $password = $row->password;
+                    $level = $row->level;
                 }
                 $this->session->set_userdata('session_user', $user);
-                $this->session->set_userdata('session_password', $password);
+                $this->session->set_userdata('session_level', $level);
                 redirect('Dashboard_elesson');
             }else{
                 $this->load->view('crud/elesson/Login/login_elesson');
