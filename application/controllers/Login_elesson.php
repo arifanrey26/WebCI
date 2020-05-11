@@ -18,9 +18,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 foreach ($cek as $row){
                     $user = $row->username;
                     $level = $row->level;
+                    // $blokir = $row->blokir;
                 }
                 $this->session->set_userdata('session_user', $user);
                 $this->session->set_userdata('session_level', $level);
+                // $this->session->set_userdata('session_level', $blokir);
                 redirect('Dashboard_elesson');
             }else{
                 $this->load->view('crud/elesson/Login/login_elesson');

@@ -33,9 +33,9 @@
                                 <td>
                                     <?php
                                         if($getLevel == 1 ){
-                                            echo '<a href="'.base_url('Dashboard_elesson/edit/'.$baris->id_admin).'" class="fa fa-edit">&nbsp;</a>';
+                                            echo '<a href="'.base_url('Dashboard_elesson/edit_user/'.$baris->id_admin).'" class="fa fa-edit">&nbsp;</a>';
                                             echo " ";
-                                            echo '<a href="'.base_url('Dashboard_elesson/hapus/'.$baris->id_admin).'" class="fa fa-times">&nbsp;</a>';
+                                            echo '<a href="'.base_url('Dashboard_elesson/hapus_user/'.$baris->id_admin).'" class="fa fa-times">&nbsp;</a>';
                                         }
                                     ?>
                                     </td></tr>
@@ -44,12 +44,26 @@
                         </tbody>
                     </table>
                 </div>
-                <?php if($getUser == "admin"){
-               echo '<a href="Dashboard_elesson/tambah_data_user" class="btn btn-success btn-icon-split">';
+                <?php if($getLevel==1){
+               echo '<a href="'.base_url('Dashboard_elesson/tambah_data_user').'" class="btn btn-success btn-icon-split">';
                echo '<span class="text">Tambah Data</span>';
                echo '</a>';
             }
                 ?>
+                <div>
+                <?php
+            if($this->input->get('delete')==1)
+            {
+				echo "<script>alert('Data Berhasil Dihapus!');
+				</script>";
+            }
+            else if($this->input->get('delete')==2)
+            {
+                echo "<script>alert('Data Anda Gagal Dihapus !');
+				</script>";
+            }
+			?>
+                </div>
             </div>
         </div>
     </body>
