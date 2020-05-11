@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }
 
         public function index(){
-            $this->load->view('crud/login');
+            $this->load->view('crud/elesson/Login/login_elesson');
         }
 
         public function cek_log(){
@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 $this->session->set_userdata('session_password', $password);
                 redirect('Dashboard_elesson');
             }else{
-                $this->load->view('crud/login_elesson');
+                $this->load->view('crud/elesson/Login/login_elesson');
             }
         }
     }

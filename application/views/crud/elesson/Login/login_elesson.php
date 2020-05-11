@@ -133,7 +133,7 @@ body.no-side{
                     <div class="panel-title text-center"><h4> <b>E-LESSON</b> </h4></div>
                 </div>     
                 <div class="panel-body" >
-                    <form name="form" id="form" class="form-horizontal" enctype="multipart/form-data" method="POST" action="cek_login.php">
+                    <form name="form" id="form" class="form-horizontal" enctype="multipart/form-data" method="POST" action="<?php echo base_url().'Login_elesson/cek_log' ?>">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                             <input id="user" type="text" class="form-control" name="txt_user" value="" placeholder="Username, NIS">                                        

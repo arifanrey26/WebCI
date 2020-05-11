@@ -14,6 +14,9 @@
             $query = $this->db->get();
             return $query;
         }
+        function save_data_user($data,$table){
+            $this->db->insert($table,$data);
+        }
     }
 
 ?>
