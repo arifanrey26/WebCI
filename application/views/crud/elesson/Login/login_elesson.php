@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
-    <link rel="shortcut icon" type="image/x-icon" href="images/logos.jpg">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logos.jpg">
     <!-- harus konek internet, karena bootstrapnya ngambil dari internet alias pake CDN (Content Delivery Network) -->
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -13,14 +13,14 @@
 <!------ Include the above in your HEAD tag ---------->
 <style>
 html{
-    background: url('images/background.jpg') top left #EEEEEE;
+    background: url(<?= base_url('assets/img/background.jpg'); ?>) top left #EEEEEE;
     overflow: hidden;
 }
 /* body {
     background-color: white;
 } */
 body{ 
-    background: url('images/background.jpg') top left; 
+    background: url(<?= base_url('assets/img/background.jpg'); ?>) top left #EEEEEE;
     min-width: 1000px; 
     min-height: 900px; 
     text-align: left; 
@@ -102,7 +102,7 @@ body.no-side{
 }
 .profile {
     margin-top : 40px;
-    background-image: url("images/3.jpg");
+    background-image: url(<?= base_url("assets/img/3.jpg"); ?>);
 	background-size: 100%;
 	padding: 5%;
 	width: 200px;
