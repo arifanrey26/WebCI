@@ -13,13 +13,17 @@
                             <tr><th>No</th>
                                 <th>Username</th>
                                 <th>Nama</th>
+                                <th>Alamat</th>
                                 <th>Level</th>
+                                <th>Status</th>
                                 <th>Aksi</th></tr>
                         </thead>
                         <tfoot><tr><th>No</th>
                                 <th>Username</th>
                                 <th>Nama</th>
+                                <th>Alamat</th>
                                 <th>Level</th>
+                                <th>Status</th>
                                 <th>Aksi</th></tr>
                         </tfoot>
                         <tbody>
@@ -28,8 +32,10 @@
                             ?>
                             <tr><td><?php echo $no++ ?></td>
                                 <td><?php echo $baris->username?></td>
+                                <td><?php echo $baris->nama_lengkap?></td>
                                 <td><?php echo $baris->alamat?></td>
                                 <td><?php echo $baris->level?></td>
+                                <td><?php echo $baris->blokir?></td>
                                 <td>
                                     <?php
                                         if($getLevel == 1 ){
