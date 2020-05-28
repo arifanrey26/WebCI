@@ -31,32 +31,27 @@
                             <tr><th>No</th>
                                 <th>Id</th>
                                 <th>Grup</th>
-                                <th>Aksi</th></tr>
+                                </tr>
                         </thead>
                         <tfoot><tr><th>No</th>
                                 <th>Id</th>
                                 <th>Grup</th>
-                                <th>Aksi</th></tr>
+                                </tr>
                         </tfoot>
                         <tbody>
                             <?php $no=1;
-                                    foreach($grup as $baris){ 
+                                    foreach($level as $baris){ 
                             ?>
                             <tr><td><?php echo $no++ ?></td>
-                                <td><?php echo $baris->id_grup ?></td>
-                                <td><?php echo $baris->grup ?></td>
-                                <td>
-                                    <a href="<?php echo base_url('Mahasiswa/editGrup/'.$baris->id_grup)?>" class="fa fa-edit">&nbsp;</a>
-                                    <a href="<?php echo base_url('Mahasiswa/hapusGrup/'.$baris->id_grup)?>" class="fa fa-times">&nbsp;</a>
-                                    </td></tr>
+                                <td><?php echo $baris->id_level; ?></td>
+                                <td><?php echo $baris->level; ?></td>
+                                </tr>
 
                                     <?php } ?>
                         </tbody>
                     </table>
                 </div>
-                <a href="addGrup" class="btn btn-success btn-icon-split">
-                <span class="text">Tambah Data</span>
-                </a>
+               
             </div>
         </div>
     </body>

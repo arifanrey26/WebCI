@@ -35,7 +35,7 @@
 
 	<!-- Nav Item - Pages Collapse Menu -->
 	<?php 
-		if($getLevel==1){
+		if($getLevel == "1" || $getLevel == "2"){
 			echo '<li class="nav-item">
 			<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
 				aria-controls="collapseTwo">
@@ -45,11 +45,42 @@
 			<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 				<div class="bg-white py-2 collapse-inner rounded">
 					<h6 class="collapse-header">Master Data:</h6>
-					<a class="collapse-item" href="'.base_url('Mahasiswa').'">Master User</a>
-					<a class="collapse-item" href="'.base_url('Mahasiswa/showGrup').'">Master Grup</a>
+					<a class="collapse-item" href="'.base_url('Dashboard_elesson').'">Master User</a>
+					<a class="collapse-item" href="'.base_url('Dashboard_elesson/showGrup').'">Master Grup</a>
 				</div>
 			</div>
-		</li>';}
+		</li>
+		<li class="nav-item">
+		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+				aria-controls="collapseTwo">
+				<i class="fas fa-fw fa-cog"></i>
+				<span>Materi Pembelajaran</span>
+			</a>
+			<div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+				<div class="bg-white py-2 collapse-inner rounded">
+					<h6 class="collapse-header">Master Data:</h6>
+					<a class="collapse-item" href="'.base_url('Dashboard_elesson/uploadmateri').'">Upload Materi</a>
+					
+				</div>
+		</li>
+
+		<li class="nav-item">
+		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true"
+				aria-controls="collapseTwo">
+				<i class="fas fa-fw fa-cog"></i>
+				<span>Mata Pelajaran</span>
+			</a>
+			<div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+				<div class="bg-white py-2 collapse-inner rounded">
+					<h6 class="collapse-header">Master Data:</h6>
+					<a class="collapse-item" href="'.base_url('Dashboard_elesson/matapelajaran').'">Mata Pelajaran</a>
+					
+				</div>
+		</li>
+
+		'
+		
+		;}
 	?>
 	<!-- Nav Item - Utilities Collapse Menu -->
 	<li class="nav-item">

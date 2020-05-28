@@ -14,7 +14,46 @@
         }
         // End of get All
 
+        function setPengampuh($data){
+            $data = [
+                'Keterangan' => $data['judul'],
+                'username_pengajar' => $data['pengajar'],
+                'mata_pelajaran' => $data['matapelajaran']
+            ];
+            $this->db->insert('mengampu', $data);
+        }
 
+        function getPengajar(){
+            $this->db->where('level',"2");
+            return $this->db->get('admin');
+        }
+
+        function getMataPelajaran(){
+            return $this->db->get('mata_pelajaran');
+        }
+
+        function getMataPelajaranById($id){
+            $this->db->where('id_matapelajaran',$id);
+            return $this->db->get('mata_pelajaran');
+        }
+        
+        function getKelasById($id_kelas){
+            $this->db->where('id_kelas',$id_kelas);
+            return $this->db->get('kelas');
+        }
+
+        function setMateri($namamateri, $nama, $id_mapel, $id_kelas){
+            $data = [
+                'judul' => $namamateri,
+                'id_kelas' => $id_kelas,
+                'id_matapelajaran' => $id_mapel,
+                'nama_file' => $nama,
+                'tgl_posting' => date("Y-m-d"),
+                'pembuat' => $this->session->userdata('session_user'),
+                'hits' => '0'
+            ];
+            $this->db->insert('file_materi',$data);
+        }
         
         //get Level from tb_level
         function getLevel(){
@@ -26,13 +65,16 @@
         //get Level order by ASC
         function get_level(){
             $this->db->order_by('id_level','ASC');
-            return $this->db->from('tb_level')->get()->result();
+            return $this->db->get('tb_level');
         }
+
+        function getlevelbyid($id){
+            $this->db->where('id_level',$id);
+            return $this->db->get('tb_level');
+        }
+
         //End get Level by ASC
         //End of get Level
-        
-
-
 
         //get Blokir from tb_blokir
         function getBlokir(){

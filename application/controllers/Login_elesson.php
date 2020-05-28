@@ -18,12 +18,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 foreach ($cek as $row){
                     $user = $row->username;
                     $level = $row->level;
-                    // $blokir = $row->blokir;
+                    $blokir =  $row->blokir;
                 }
-                $this->session->set_userdata('session_user', $user);
-                $this->session->set_userdata('session_level', $level);
-                // $this->session->set_userdata('session_level', $blokir);
-                redirect('Dashboard_elesson');
+                if($blokir == "1"){
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+                    Mohon Maaf Akun anda terblokir!
+                  </div>');
+                  redirect('login');
+                }else{   
+                    $this->session->set_userdata('session_user', $user);
+                    $this->session->set_userdata('session_level', $level);
+                    $this->session->set_userdata('session_blokir', $blokir);
+                    redirect('Dashboard_elesson');
+                }
             }else{
                 $this->load->view('crud/elesson/Login/login_elesson');
             }
