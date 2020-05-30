@@ -4,7 +4,7 @@
  * Setup class
  *
  * @package   e-Learning Dokumenary Net
- * @author    Almazari <almazary@gmail.com>
+ * @author    
  * @copyright Copyright (c) 2013 - 2016, Dokumenary Net.
  * @since     1.0
  * @link      http://dokumenary.net
