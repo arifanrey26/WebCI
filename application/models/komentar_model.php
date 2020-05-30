@@ -6,7 +6,7 @@
  * @package Elearning Dokumenary
  * @link    http://www.dokumenary.net
  * @since   1.5
- * @author  Almazari
+ * @author  
  */
 class Komentar_model extends CI_Model
 {
