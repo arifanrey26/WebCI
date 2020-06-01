@@ -1,11 +1,4 @@
 <?php
-
-/**
- * Class Model untuk resource pengajar
- *
- * @package Elearning Dokumenary
- * @link    http://www.dokumenary.net
- */
 class Pengajar_model extends CI_Model
 {
     /**
