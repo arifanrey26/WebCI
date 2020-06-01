@@ -703,69 +703,6 @@ class Pengajar extends MY_Controller
             );
         }
 
-        # panggil colorbox
-        $html_js = load_comp_js(array(
-            base_url('assets/comp/colorbox/jquery.colorbox-min.js'),
-        ));
-        $data['comp_js']  = $html_js;
-        $data['comp_css'] = load_comp_css(array(base_url('assets/comp/colorbox/colorbox.css')));
-
-        $data['pengajars']     = $retrieve_all['results'];
-        $data['pagination']    = $this->pager->view($retrieve_all, 'pengajar/filter/');
-        $data['count_pending'] = $this->pengajar_model->count('pending');
-
-        $this->twig->display('filter-pengajar.html', $data);
-    }
-
-    function filter_action()
-    {
-        if ($this->form_validation->run('pengajar/filter') == TRUE) {
-            $pengajar_ids = $this->input->post('pengajar_id', TRUE);
-            $status_id    = (int)$this->input->post('status_id', TRUE);
-
-            if (!empty($pengajar_ids) AND is_array($pengajar_ids)) {
-
-                if (empty($status_id)) {
-                    $this->session->set_flashdata('pengajar', get_alert('warning', 'Tidak ada aksi yang dipilih.'));
-                    redirect('pengajar/filter');
-                }
-
-                foreach ($pengajar_ids as $pengajar_id) {
-                    $p = $this->pengajar_model->retrieve($pengajar_id);
-                    if (!empty($status_id)) {
-                        //update status siswa
-                        $this->pengajar_model->update(
-                            $pengajar_id,
-                            $p['nip'],
-                            $p['nama'],
-                            $p['jenis_kelamin'],
-                            $p['tempat_lahir'],
-                            $p['tgl_lahir'],
-                            $p['alamat'],
-                            $p['foto'],
-                            $status_id
-                        );
-                    }
-                }
-
-                $label = '';
-                if (!empty($status_id)) {
-                    $label_status = array('Pending', 'Aktif', 'Blocking');
-                    $label .= 'status = '.$label_status[$status_id];
-                }
-
-                $this->session->set_flashdata('pengajar', get_alert('success', 'Pengajar berhasil diperbaharui ('.$label.').'));
-                redirect('pengajar/filter');
-
-            } else {
-                $this->session->set_flashdata('pengajar', get_alert('warning', 'Tidak ada pengajar yang dipilih.'));
-                redirect('pengajar/filter');
-            }
-
-        } else {
-            redirect('pengajar/filter');
-        }
-    }
 
     function jadwal()
     {
