@@ -1,12 +1,4 @@
 <?php
-
-/**
- * Class Model untuk Config
- *
- * @package Elearning Dokumenary
- * @link    http://www.dokumenary.net
- * 
- */
 class Config_model extends CI_Model
 {
     /**
