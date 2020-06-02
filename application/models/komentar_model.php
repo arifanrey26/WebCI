@@ -1,13 +1,4 @@
 <?php
-
-/**
- * Class Model untuk resource komentar materi
- *
- * @package Elearning Dokumenary
- * @link    http://www.dokumenary.net
- * @since   1.5
- * @author  Almazari
- */
 class Komentar_model extends CI_Model
 {
     private $table = 'komentar';
